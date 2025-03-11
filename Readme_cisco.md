@@ -166,3 +166,32 @@ La Paz (192.168.1.0/24):
 | 8 | 192.168.3.224/27 | 192.168.3.225 - 192.168.3.254 | 192.168.3.255 |
 
 ![alt text](image-14.png)
+
+## Configuración de Rutas Estáticas
+
+### Router de Cochabamba
+
+```bash
+ip route 192.168.1.0 255.255.255.0 10.0.1.1   # Ruta a La Paz
+ip route 192.168.3.0 255.255.255.0 10.0.2.2   # Ruta a Santa Cruz
+```
+
+### Router de La Paz
+
+```bash
+ip route 192.168.2.0 255.255.255.0 10.0.1.2   # Ruta a Cochabamba
+ip route 192.168.3.0 255.255.255.0 10.0.3.2   # Ruta a Santa Cruz
+```
+
+### Router de Santa Cruz
+
+```bash
+ip route 192.168.2.0 255.255.255.0 10.0.2.1   # Ruta a Cochabamba
+ip route 192.168.1.0 255.255.255.0 10.0.3.1   # Ruta a La Paz
+```
+
+![alt text](image-15.png)
+
+![alt text](image-16.png)
+
+
