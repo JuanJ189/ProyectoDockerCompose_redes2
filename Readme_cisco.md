@@ -194,4 +194,70 @@ ip route 192.168.1.0 255.255.255.0 10.0.3.1   # Ruta a La Paz
 
 ![alt text](image-16.png)
 
+![alt text](image-17.png)
 
+
+## Configuración de Servicio de Correo Electrónico
+
+### Asignación de Usuarios y Contraseñas
+
+| Usuario         | Contraseña |
+|-----------------|------------|
+| juan@lcs.com    | 12345      |
+| blady@lcs.com   | 12345      |
+| omar@lcs.com    | 12345      |
+| jhosep@lcs.com  | 12345      |
+
+**Configuración del Servidor de Correo**
+
+* Seleccionar el Servidor
+* Agrega un Servidor .
+* Conéctarlo a un switch dentro de la Subred.
+
+![alt text](image-18.png)
+
+**Activar el Servicio de Correo**
+
+* En la pestaña `Services > Email`.
+* Activar los servicios `SMTP` y `POP3`.
+* Configurar el dominio de correo:
+    * `Domain Name: lcs.com`
+
+**Crear Cuentas de Correo**
+
+* Agregar los usuarios mencionados en la tabla anterior.
+    * juan@lcs.com
+    * blady@lcs.com
+    * omar@lcs.com
+    * jhosep@lcs.com
+* Asignar la contraseña "12345" a cada usuario.
+
+![alt text](image-19.png)
+
+**Configuración de los Clientes de Correo**
+
+**Configurar los Datos del Usuario**
+
+* ir a la pestaña `Desktop > Email` en cada PC cliente.
+* Ingresar los datos correspondientes:
+    * `Email Address: juan@lcs.com` (o el usuario correspondiente)
+    * `Incoming Mail Server (POP3): 192.168.2.68`
+    * `Outgoing Mail Server (SMTP): 192.168.2.68`
+    * `Username: Juan` (o el nombre de usuario correspondiente)
+    * `Password: 12345`
+* Guardar la configuración.
+
+**4. Prueba del Servicio de Correo**
+
+**Verificar Conectividad**
+
+* Usar el comando `ping 192.168.2.68` desde una PC cliente para comprobar la comunicación con el servidor.
+
+**Enviar un Correo**
+
+* Desde la PC `juan@lcs.com`, envía un correo a `blady@lcs.com`.
+* Desde la PC `blady@lcs.com`, revisar la bandeja de entrada.
+
+![alt text](image-20.png)
+
+![alt text](image-21.png)
